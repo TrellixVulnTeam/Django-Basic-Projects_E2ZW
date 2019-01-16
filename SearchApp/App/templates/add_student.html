@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Student Name:</td>
+            <td><input type="text" name="stname" placeholder="Enter student name"></td>
+        </tr>
+        <tr>
+            <td>Student Roll:</td>
+            <td><input type="text" name="stroll" placeholder="Enter student roll"></td>
+        </tr>
+        <tr>
+            <td>Student Class:</td>
+            <td><input type="text" name="stclass" placeholder="Enter student class"></td>
+        </tr>
+        <tr>
+            <td>Student Department:</td>
+            <td><input type="text" name="stdepartment" placeholder="Enter student department"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Save Now</button> </td>
+        </tr>
+    </table>
+</form>
+<a href="/student_list/">Student List</a>
+<a href="/search/">Search</a>
+</body>
+</html>

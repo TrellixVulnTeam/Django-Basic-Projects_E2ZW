@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searh Data</title>
+</head>
+<body>
+<form method="post" action="/search/">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td><input type="search" name="srch" placeholder="Enter value"></td>
+            <td><button type="submit">Search</button></td>
+        </tr>
+    </table>
+</form>
+
+<p style="text-align: center">{{ error }}</p>
+
+{% if request.method != "GET"%}
+<table align="center" border="1" width="350" style="text-align: center">
+    {% for i in result %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.roll }}</td>
+            <td>{{ i.st_class }}</td>
+            <td>{{ i.department }}</td>
+        </tr>
+    {% endfor %}
+{% endif %}
+</table>
+<a href="/student_list/">Student List</a>
+<a href="/">Add New</a>
+</body>
+</html>

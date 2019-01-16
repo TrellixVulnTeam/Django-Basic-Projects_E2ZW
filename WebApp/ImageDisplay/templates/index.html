@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/upload/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" placeholder="Enter employee name"></td>
+            </tr>
+            <tr>
+                <td>Upload Image</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Save Data</button><span style="color: green">{{ scs }}</span> </td>
+            </tr>
+        </table>
+    </form>
+    <a href="/" style="text-decoration: none">Reset</a>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Images</th>
+    </thead>
+    <tbody>
+        {% for emp in employee%}
+            <tr>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.name }}</td>
+                <td>
+                    <img src="{{ emp.image.url }}" alt="no image uploaded / root found" width="200" height="200" style="border: 2px solid blue"/>
+                </td>
+                <td><a href="/edit_page/{{emp.id}}">Edit</a> </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

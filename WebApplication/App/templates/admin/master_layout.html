@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'admin/css/style.css' %}"/>
+</head>
+<body>
+
+{% include 'admin/include/header.html' %}
+{% block app_body %}{% endblock %}
+{% include 'admin/include/menu.html' %}
+
+</body>
+</html>

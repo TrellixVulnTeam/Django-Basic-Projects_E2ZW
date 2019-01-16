@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<table align='center'>
+			<tr>
+				<td><label>First Name</label></td>
+				<td><input type="text" name="first_name" placeholder="Enter first name"></td>
+			</tr>
+			<tr>
+				<td><label>Last Name</label></td>
+				<td><input type="text" name="last_name" placeholder="Enter last name"></td>
+			</tr>
+			<tr>
+				<td><label>Age</label></td>
+				<td><input type="number" name="age" placeholder="Enter age"></td>
+			</tr>
+			<tr>
+				<td><label>Country</label></td>
+				<td><input type="text" name="country" placeholder="Enter country"></td>
+			</tr>
+			<tr>
+				<td><label>City</label></td>
+				<td><input type="text" name="city" placeholder="Enter city"></td>
+			</tr>
+			<tr>
+				<td><label>Village</label></td>
+				<td><input type="text" name="village" placeholder="Enter vilage"></td>
+			</tr>
+			<tr>
+				<td><label>Zip</label></td>
+				<td><input type="text" name="zip" placeholder="Enter zip"></td>
+			</tr>
+			<tr>
+				<td><label></label></td>
+				<td><button type="submit">Save Data</button>{{ success }}</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

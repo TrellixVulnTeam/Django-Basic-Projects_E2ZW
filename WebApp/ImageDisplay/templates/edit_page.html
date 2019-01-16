@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/update/{{ employee.id }}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" placeholder="{{ employee.name }}" value="{{ employee.name }}"></td>
+            </tr>
+            <tr>
+                <td>Upload Image</td>
+                <td><input type="file" name="image"></td>
+                <img src="{{ employee.image.url }}" width="100" height="100" alt="no image found" style="border: 2px solid blue"/>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Update Data</button><span style="color: green"></span> </td>
+            </tr>
+        </table>
+    </form>
+<a href="/">Home</a>
+</body>
+</html>

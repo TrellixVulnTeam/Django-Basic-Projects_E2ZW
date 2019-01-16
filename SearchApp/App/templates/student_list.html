@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+<body>
+<table width="500" border="1" align="center" style="text-align: center">
+    <thead>
+        <th>Student Name</th>
+        <th>Student Roll</th>
+        <th>Student Class</th>
+        <th>Student Department</th>
+    </thead>
+    <tbody>
+    {% for std in student %}
+        <tr>
+            <td>{{ std.name }}</td>
+            <td>{{ std.roll }}</td>
+            <td>{{ std.st_class }}</td>
+            <td>{{ std.department }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="pagination" align="center">
+    {% if student.has_previous %}
+        <a href="?page={{ student.previous_page_number }}">Previous</a>
+    {% endif %}
+    Page {{ student.number }} of {{ student.paginator.num_pages }}.
+    {% if student.has_next %}
+        <a href="?page={{ student.next_page_number }}">Next</a>
+    {% endif %}
+</div>
+<a href="/">Add Student</a>
+<a href="/search/">Search</a>
+</body>
+</html>

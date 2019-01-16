@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ResetPass</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    Your Email: <input type="Email" name="email" placeholder="Enter Email">
+    <br>
+    <button type="submit">Submit</button><span style="color: green">{{ msg }}</span>
+</form>
+</body>
+</html>

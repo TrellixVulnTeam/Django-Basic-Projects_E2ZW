@@ -1,0 +1,1 @@
+These all are django basic codes. Every each folder is requiring different codes.

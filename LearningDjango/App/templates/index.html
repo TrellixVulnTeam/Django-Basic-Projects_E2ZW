@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Save Data</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>First Name</td>
+				<td><input type="text" name="fname" placeholder="Enter first name" value="{{ edit_data.first_name }}"></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="lname" placeholder="Enter last name" value="{{ edit_data.last_name }}"></td>
+			</tr>
+			<tr>
+				<td>E-mail</td>
+				<td><input type="email" name="email" placeholder="Enter email address" value="{{ edit_data.email }}"></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><input type="text" name="address" placeholder="Enter address" value="{{ edit_data.address }}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button type="submit">Sava Data</button>{{ success }}</td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	<table width="500" style="text-align: center;" border="1" align="center">
+		<tr>
+			<td>Id</td>
+			<td>Full Name</td>
+			<td>Email</td>
+			<td>Address</td>
+			<td>Actions</td>
+		</tr>
+		{% for datas in data %}
+		<tr>
+			<td>{{ datas.id }}</td>
+			<td>{{ datas.first_name }} {{ datas.last_name }}</td>
+			<td>{{ datas.email }}</td>
+			<td>{{ datas.address }}</td>
+			<td><a href="{{ datas.id }}/Edit">Edit</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

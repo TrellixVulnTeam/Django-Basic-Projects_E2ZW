@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>Garden Name</td>
+                <td><input type="text" name="garden_name"/></td>
+            </tr>
+            <tr>
+                <td>Garden Desc</td>
+                <td><textarea name="garden_desc"></textarea> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

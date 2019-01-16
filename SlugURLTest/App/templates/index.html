@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <div style="width: 400px; margin: auto;">
+            <div>
+                <label>Product Title</label>
+                <input type="text" name="product_title" placeholder="Enter product title">
+            </div>
+            <br>
+            <div>
+                <label>Product Model</label>
+                <input type="text" name="product_model" placeholder="Enter product model">
+            </div>
+            <br>
+            <div>
+                <label>Product Price</label>
+                <input type="text" name="product_price" placeholder="Enter product price">
+            </div>
+            <br>
+            <div>
+                <label>Product Status</label>
+                <input type="text" name="product_status" placeholder="Enter product status">
+            </div>
+            <br>
+            <div>
+                <button type="submit">Save Data</button>
+            </div>
+        </div>
+    </form>
+<table align="center">
+    <tr>
+        <td>Product ID</td>
+        <td>Product Name</td>
+        <td>Action</td>
+    </tr>
+    {% for foo in prd %}
+        <tr>
+            <td>{{ foo.id }}</td>
+            <td>{{ foo.product_name }}</td>
+            <td>
+                <a href="/details/{{ foo.product_slug_url }}">details</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
